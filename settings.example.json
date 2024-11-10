@@ -1,0 +1,18 @@
+{
+    "database":
+    {
+        "directory": "./data",
+        "filename": "ble_station.db"
+    },
+    "ruuviTags":{
+        "macs":[
+            "FF:FF:FF:FF:FF:FF",
+            "F3:F3:F3:F3:F3:F3"
+        ]
+    },
+    "azureIotHub":
+    {
+        "connectionString": "---",
+        "connectionOpener": null
+    }
+}
