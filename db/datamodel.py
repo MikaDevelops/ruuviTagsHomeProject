@@ -165,6 +165,51 @@ datamodel='''
                     }
                 }
             ]
+        },
+        {
+            "name": "macs",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "primary_key": true,
+                    "foreign_key":
+                    {
+                        "is_foreign_key":false,
+                        "reference": ""
+                    }
+                },
+                {
+                    "name": "mac",
+                    "type": "TEXT",
+                    "primary_key": false,
+                    "foreign_key":
+                    {
+                        "is_foreign_key":false,
+                        "reference": ""
+                    }
+                },
+                {
+                    "name": "nimi",
+                    "type": "INTEGER",
+                    "primary_key": false,
+                    "foreign_key":
+                    {
+                        "is_foreign_key":false,
+                        "reference": ""
+                    }
+                },
+                {
+                    "name": "recorded",
+                    "type": "INTEGER",
+                    "primary_key": false,
+                    "foreign_key":
+                    {
+                        "is_foreign_key":false,
+                        "reference": ""
+                    }
+                }
+            ]
         }
     ]
 }
