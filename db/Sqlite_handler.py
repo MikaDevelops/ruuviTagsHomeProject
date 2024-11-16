@@ -18,8 +18,11 @@ class Sqlite_handler:
     
     def create_tables(self):
         datamalli = json.loads(dm.datamodel)
-        sql_merkkijono = ""
+        
+        con = self.get_connection()
+        cursor = con.cursor()
         for taulu in datamalli['tables']:
+            sql_merkkijono = ""
             sql_merkkijono += "CREATE TABLE IF NOT EXISTS "+taulu['name'] +" ("
             colsIndex=0
             
@@ -30,13 +33,12 @@ class Sqlite_handler:
                 if (colsIndex < len(taulu['columns'])-1):
                     sql_merkkijono += ", "
                 colsIndex +=1
+            
             sql_merkkijono += "); "
-        #print(sql_merkkijono)
-        
-        con = self.get_connection()
-        cursor = con.cursor()
-        cursor.execute(sql_merkkijono)
-        con.commit
+            print(sql_merkkijono)
+            cursor.execute(sql_merkkijono)
+            con.commit
+
         con.close()
 
     def save_data(self, data):
