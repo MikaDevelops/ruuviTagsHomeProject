@@ -10,13 +10,13 @@ macsLength = len(macs_from_file)
 i = 0
 for macF in macs_from_file:
     macFlower = macF.lower()
-    macFfind = macFlower.replace(":", "")
-    name_of_ruuvi = macs[macFfind]
-    addition += f"('{macF}', '{name_of_ruuvi}', 1)"
+    macFlowerWithoutColons = macFlower.replace(":", "")
+    name_of_ruuvi = macs[macFlowerWithoutColons]
+    addition += f"('{macF}', '{macFlowerWithoutColons}', '{name_of_ruuvi}', 1)"
     i+=1
     if (i < macsLength):
         addition +=", "
-sql_string: str = "INSERT INTO macs(mac, nimi, recorded) VALUES " + addition
+sql_string: str = "INSERT INTO macs(mac, mac_lower_case, nimi, recorded) VALUES " + addition
 
 db = Sqlite_handler()
 conn = db.get_connection()

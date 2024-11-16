@@ -190,6 +190,16 @@ datamodel='''
                     }
                 },
                 {
+                    "name": "mac_lower_case",
+                    "type": "TEXT",
+                    "primary_key": false,
+                    "foreign_key":
+                    {
+                        "is_foreign_key":false,
+                        "reference": ""
+                    }
+                },
+                {
                     "name": "nimi",
                     "type": "INTEGER",
                     "primary_key": false,
