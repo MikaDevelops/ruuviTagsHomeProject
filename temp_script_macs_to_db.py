@@ -9,8 +9,9 @@ addition = ""
 macsLength = len(macs_from_file)
 i = 0
 for macF in macs_from_file:
-    name_of_ruuvi = macs[macF]
-    
+    macFlower = macF.lower()
+    macFfind = macFlower.replace(":", "")
+    name_of_ruuvi = macs[macFfind]
     addition += f"('{macF}', '{name_of_ruuvi}', 1)"
     i+=1
     if (i < macsLength):
